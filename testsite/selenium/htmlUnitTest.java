@@ -21,15 +21,15 @@ public class htmlUnitTest {
 		driver.get("http://localhost:4000");
 
 		// This code will test and print the page title
-		String pageTitle = driver.getTitle();
-		Assert.assertNotEquals(pageTitle, "");  // line 25
-		Assert.assertFalse(pageTitle.matches("^\\s*$")); // uses regexp
-		System.out.println("Page title is: " + pageTitle);
+		//String pageTitle = driver.getTitle();
+		//Assert.assertNotEquals(pageTitle, "");  // line 25
+		//Assert.assertFalse(pageTitle.matches("^\\s*$")); // uses regexp
+		//System.out.println("Page title is: " + pageTitle);
 
 		// This code will check the HTML source for Jekyll 404 errors
-		//String pageSource = driver.getPageSource();
-		//Assert.assertFalse(pageSource.contains("404.html")); // line 31
-		//Assert.assertFalse(pageSource.contains("requested page could not be found"));
+		String pageSource = driver.getPageSource();
+		Assert.assertFalse(pageSource.contains("404.html")); // line 31
+		Assert.assertFalse(pageSource.contains("requested page could not be found"));
 
 		// Create a test that is specific to YOUR Jekyll site here -->
 		// This code will check the post-link text for a specific string
